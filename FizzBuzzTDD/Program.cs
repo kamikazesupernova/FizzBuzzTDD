@@ -26,9 +26,21 @@ namespace FizzBuzzTDD
                     try
                     {
                         var fizzBuzz = services.GetRequiredService<FizzBuzzService>();
-                        fizzBuzz.GenerateFizzBuzz(1,6);
 
-                        Console.WriteLine("End of program");
+                        Console.WriteLine("Enter start value:");
+                        int start = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Enter end value:");
+                        int end = int.Parse(Console.ReadLine());
+
+                        var result = fizzBuzz.GenerateFizzBuzz(start, end);
+
+                        foreach (var item in result)
+                        {
+                            Console.WriteLine(item);
+                        }
+
+                        Console.WriteLine("End of program.");
                     }
                     catch (Exception ex)
                     {
